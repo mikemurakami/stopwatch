@@ -17,10 +17,38 @@
 <body>
     <div class="container">
         <p id="timer">00:00:00</p>
+        
 
         <div>
             <button id="start_stop" class="btn btn-lg btn-primary">START</button>
         </div>
     </div>
+
+
+    <script>
+        // ゼロを追加する
+        var addZero = function(value) {
+            if (value < 10) {
+            value = '0' + value;
+        }
+        return value;
+    }
+
+
+        var now = new Date();
+        var seconds = now.getSeconds(); // 秒を取得
+        seconds = addZero(seconds);
+
+
+        var minutes = now.getMinutes(); // 分を取得
+        minutes = addZero(minutes);
+
+
+        var hours = now.getHours(); // 時を取得
+        hours = addZero(hours);
+
+        document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+    </script>
+    
 </body>
 </html>
